@@ -1,20 +1,20 @@
 import {
-  Controller,
-  Get,
-  Post,
-  Patch,
-  Delete,
-  Param,
   Body,
-  ParseIntPipe,
-  UseGuards,
+  Controller,
+  Delete,
+  Get,
   HttpCode,
   HttpStatus,
+  Param,
+  ParseIntPipe,
+  Patch,
+  Post,
+  UseGuards,
 } from '@nestjs/common';
-import { GetUser } from '../auth/decorator';
-import { NoteService } from './note.service';
-import { UpdateNoteDTO, InsertNoteDTO } from './dto';
 import { MyJwtGuard } from 'src/auth/guard';
+import { GetUser } from '../auth/decorator';
+import { InsertNoteDTO, UpdateNoteDTO } from './dto';
+import { NoteService } from './note.service';
 
 @UseGuards(MyJwtGuard)
 @Controller('notes')
